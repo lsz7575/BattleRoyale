@@ -77,10 +77,10 @@ public class BattleRoyale extends JavaPlugin {
 		this.playerStat = new HashMap<String, BRPlayer>();
 		this.setPlayerTask(new HashMap<String, BukkitTask>());
 
-		//BR建造物データ読み込み
+		//读取大逃杀建筑物
 		loadBRBuildings();
 
-		//ランダム建築
+		//随机建筑物
 		int buildNum = this.getConfig().getInt("brbuild.num");
 		if(buildNum == 0){
 			this.getConfig().set("brbuild.num", 15);
@@ -89,7 +89,7 @@ public class BattleRoyale extends JavaPlugin {
 		}
 		createRundomBuild(buildNum);
 
-		//コマンド登録
+		//指令载入
 		this.log.info("BattleRoyale commands preparing....");
 		this.getCommand("setroom").setExecutor(new StartPosCmd(this));
 		this.getCommand("brgame").setExecutor(new BrGame(this));
@@ -98,7 +98,7 @@ public class BattleRoyale extends JavaPlugin {
 		this.getCommand("brblist").setExecutor(new BRBuildList(this));
 		this.getCommand("brvotemap").setExecutor(new BRMapChange(this));
 
-		//リスナー登録
+		//监听载入
 		PluginManager pm = this.getServer().getPluginManager();
 		pm.registerEvents(new BRPlayerListener(this), this);
 		pm.registerEvents(new MapListener(this), this);
@@ -224,7 +224,7 @@ public class BattleRoyale extends JavaPlugin {
 	}
 
 	/**
-	 * @param nextAreaBlocks セットする nextAreaBlocks
+	 * @param nextAreaBlocks set nextAreaBlocks
 	 */
 	public void setNextAreaBlocks(List<String> nextAreaBlocks) {
 		this.nextAreaBlocks = nextAreaBlocks;
