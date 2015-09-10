@@ -1,0 +1,22 @@
+name: BattleRoyale
+main: com.tyoku.BattleRoyale
+version: 0.1.0
+commands:
+   setroom:
+      description: 初回スポーン位置を設定します。オプションでx,y,z座標を整数で指定も可能。
+      usage: /setroom [x y x]
+   brgame:
+      description: バトロワの開始と終了を操作。または現在のステータスを参照します。
+      usage: /brgame [start|stop|status]
+   setbrarea:
+      description: ゲームエリアを分校を中心に何マスで行うか設定する。
+      usage: /setbrarea [n]
+   brbuild:
+      description: BR特有の建造物を作成します。setでポジション１、２の立方体と建造物の中心を設定します。saveで名前をつけて建造物を保存します。createで指定の建造物を建築します。listで保存している建造物名の一覧を表示します。
+      usage: /brbuild [[list] [create <name>] [save <name>] [set [1|2|home]]]
+   brblist:
+      description: ゲームエリア内に建築された建物の座標を参照する。
+      usage: /brblist
+   brvotemap:
+      description: ワールドを再作成するか否かの意思を示します。賛成割合や人数により、ワールド再構築のためにサーバを落とします。
+      usage: /brvotemap <yes|no>
